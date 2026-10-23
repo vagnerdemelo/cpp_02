@@ -2,8 +2,8 @@
 
 int main( void ) {
 	Fixed a;
-	a.setRawBits(2560);
-	a = a;
+	// a.setRawBits(2560);
+	// a = a;
 
 	Fixed b( a );
 	Fixed c;
