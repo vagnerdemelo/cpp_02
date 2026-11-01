@@ -64,6 +64,36 @@ float Fixed::toFloat(void) const
 	return this->_number / ((1 << this->_fractional) * 1.0f);
 }
 
+bool Fixed::operator<(const Fixed &other) const
+{
+	return this->_number < other._number;
+}
+
+bool Fixed::operator>(const Fixed &other) const
+{
+	return this->_number > other._number;
+}
+
+bool Fixed::operator<=(const Fixed &other) const
+{
+	return this->_number <= other._number;
+}
+
+bool Fixed::operator>=(const Fixed &other) const
+{
+	return this->_number >= other._number;
+}
+
+bool Fixed::operator==(const Fixed &other) const
+{
+	return this->_number == other._number;
+}
+
+bool Fixed::operator!=(const Fixed &other) const
+{
+	return this->_number != other._number;
+}
+
 std::ostream& operator<<(std::ostream &out, const Fixed &obj)
 {
 	return out << obj.toFloat();
