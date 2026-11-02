@@ -13,6 +13,22 @@ Fixed::Fixed(const Fixed &obj)
 	this->_number = obj._number;
 }
 
+Fixed::Fixed(const int num)
+{
+	// std::cout << "Int constructor called" << '\n';
+	int result = 1 << this->_fractional;
+
+	this->_number = num * result;
+}
+
+Fixed::Fixed(const float num)
+{
+	// std::cout << "Float constructor called" << '\n';
+	int result = 1 << this->_fractional;
+
+	this->_number = roundf(num * result);
+}
+
 Fixed &Fixed::operator=(const Fixed &obj)
 {
 	// std::cout << "Copy assignment operator called" << '\n';
@@ -54,21 +70,6 @@ Fixed Fixed::operator/(const Fixed &obj) const
 	return result;
 }
 
-Fixed::Fixed(const int num)
-{
-	// std::cout << "Int constructor called" << '\n';
-	int result = 1 << this->_fractional;
-
-	this->_number = num * result;
-}
-
-Fixed::Fixed(const float num)
-{
-	// std::cout << "Float constructor called" << '\n';
-	int result = 1 << this->_fractional;
-
-	this->_number = roundf(num * result);
-}
 
 Fixed::~Fixed()
 {
