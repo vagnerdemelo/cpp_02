@@ -70,6 +70,19 @@ Fixed Fixed::operator/(const Fixed &obj) const
 	return result;
 }
 
+Fixed Fixed::operator++()
+{
+	++this->_number;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp = *this;
+	++(this->_number);
+	
+	return tmp;
+}
 
 Fixed::~Fixed()
 {

@@ -19,6 +19,8 @@ public:
 	Fixed operator- (const Fixed& obj) const;
 	Fixed operator* (const Fixed& obj) const;
 	Fixed operator/ (const Fixed& obj) const;
+	Fixed operator++ ();
+	Fixed operator++ (int);
 	~Fixed();
 
 	int getRawBits( void ) const;
