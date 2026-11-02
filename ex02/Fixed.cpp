@@ -80,7 +80,21 @@ Fixed Fixed::operator++(int)
 {
 	Fixed tmp = *this;
 	++(this->_number);
-	
+
+	return tmp;
+}
+
+Fixed Fixed::operator--()
+{
+	--this->_number;
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp = *this;
+	--(this->_number);
+
 	return tmp;
 }
 
