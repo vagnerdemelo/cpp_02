@@ -70,7 +70,7 @@ Fixed Fixed::operator/(const Fixed &obj) const
 	return result;
 }
 
-Fixed Fixed::operator++()
+Fixed &Fixed::operator++()
 {
 	++this->_number;
 	return *this;
@@ -84,7 +84,7 @@ Fixed Fixed::operator++(int)
 	return tmp;
 }
 
-Fixed Fixed::operator--()
+Fixed &Fixed::operator--()
 {
 	--this->_number;
 	return *this;
