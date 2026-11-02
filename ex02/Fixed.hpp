@@ -13,6 +13,10 @@ public:
 	Fixed();
 	Fixed(const Fixed& obj);
 	Fixed& operator= (const Fixed& obj);
+	Fixed operator+ (const Fixed& obj) const;
+	Fixed operator- (const Fixed& obj) const;
+	Fixed operator* (const Fixed& obj) const;
+	Fixed operator/ (const Fixed& obj) const;
 	Fixed(const int num);
 	Fixed(const float num);
 	~Fixed();

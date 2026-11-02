@@ -22,6 +22,38 @@ Fixed &Fixed::operator=(const Fixed &obj)
 	return *this;
 }
 
+Fixed Fixed::operator+(const Fixed &obj) const
+{
+	Fixed result;
+
+	result.setRawBits(this->_number + obj._number);
+	return result;
+}
+
+Fixed Fixed::operator-(const Fixed &obj) const
+{
+	Fixed result;
+
+	result.setRawBits(this->_number - obj._number);
+	return result;
+}
+
+Fixed Fixed::operator*(const Fixed &obj) const
+{
+	Fixed result;
+	long rawValue = static_cast<long>(this->_number) * obj._number;
+	result.setRawBits(rawValue / (1 << this->_fractional));
+
+	return result;
+}
+
+Fixed Fixed::operator/(const Fixed &obj) const
+{
+	float base = ((1 << this->_fractional) * 1.0f);
+	Fixed result((this->_number / base) / (obj._number / base));
+	return result;
+}
+
 Fixed::Fixed(const int num)
 {
 	// std::cout << "Int constructor called" << '\n';
