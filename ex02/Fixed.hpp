@@ -35,6 +35,11 @@ public:
 	bool operator>= (const Fixed& other) const;
 	bool operator== (const Fixed& other) const;
 	bool operator!= (const Fixed& other) const;
+
+	static Fixed& min(Fixed &obj1, Fixed &obj2);
+	static const Fixed& min(const Fixed& ref1, const Fixed& ref2);
+	static Fixed& max(Fixed &obj1, Fixed &obj2);
+	static const Fixed& max(const Fixed& ref1, const Fixed& ref2);
 };
 
 std::ostream& operator<< (std::ostream& out, const Fixed& obj);

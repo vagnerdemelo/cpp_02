@@ -154,6 +154,38 @@ bool Fixed::operator!=(const Fixed &other) const
 	return this->_number != other._number;
 }
 
+Fixed &Fixed::min(Fixed &obj1, Fixed &obj2)
+{
+	if (obj1._number < obj2._number)
+		return obj1;
+	else
+		return obj2;
+}
+
+Fixed const &Fixed::min(const Fixed &obj1, const Fixed &obj2)
+{
+	if (obj1._number < obj2._number)
+		return obj1;
+	else
+		return obj2;
+}
+
+Fixed &Fixed::max(Fixed &obj1, Fixed &obj2)
+{
+	if (obj1._number > obj2._number)
+		return obj1;
+	else
+		return obj2;
+}
+
+Fixed const &Fixed::max(const Fixed &obj1, const Fixed &obj2)
+{
+	if (obj1._number > obj2._number)
+		return obj1;
+	else
+		return obj2;
+}
+
 std::ostream& operator<<(std::ostream &out, const Fixed &obj)
 {
 	return out << obj.toFloat();
